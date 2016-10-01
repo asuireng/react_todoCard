@@ -73,11 +73,11 @@ body {
 .card_title::before {
     display: inline-block;
     width: 1em;
-    content: '->';
+    content: '▸';
 }
 
 .card_title--is-open:before {
-    content: '~';
+    content: '▾';
 }
 
 .checklist_task:first-child {
@@ -89,7 +89,7 @@ body {
 .checklist_task--remove:after {
     display: inline-block;
     color: #d66;
-    content: " +";
+    content: "✖";
 }
 
 .checklist--add-task {

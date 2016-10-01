@@ -15,7 +15,7 @@ const Header = ({ children }) => {
                 </div>
             </header>
             <div className="mdl-layout__drawer">
-                <span className="mdl-layout-title">Title</span>
+                <span className="mdl-layout-title">Drawer</span>
                 <nav className="mdl-navigation">
                     <a className="mdl-navigation__link" href="">Home</a>
                     <a className="mdl-navigation__link" href="">About</a>

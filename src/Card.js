@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import CheckList from './CheckList';
 import marked from 'marked';
 let titlePropType = (props, propName, componentName) => {
@@ -29,7 +29,8 @@ class Card extends React.Component {
             carDetails = (
                 <div className="car_details">
                     <span dangerouslySetInnerHTML={{__html:marked(this.props.description)}} />
-                    <CheckList cardId={this.props.id} tasks={this.props.tasks} />
+                    <CheckList cardId={this.props.id} tasks={this.props.tasks} 
+                               taskCallbacks={this.props.taskCallbacks}/>
                 </div>
             );
         }
@@ -55,10 +56,11 @@ class Card extends React.Component {
     }
 }
 Card.propTypes = {
-    description: React.PropTypes.string,
-    id: React.PropTypes.number,
+    description: PropTypes.string,
+    id: PropTypes.number,
     title: titlePropType,
-    tasks: React.PropTypes.arrayOf(React.PropTypes.object),
-    color: React.PropTypes.string
+    tasks: PropTypes.arrayOf(PropTypes.object),
+    color: PropTypes.string,
+    taskCallbacks:PropTypes.object
 };
 export default Card;

@@ -5,10 +5,8 @@ export default class List extends React.Component {
     render() {
         let cards = this.props.cards.map((card) => {
             return (<Card key={card.id}
-                         title={card.title}
-                         description={card.description}
-                         color={card.color}
-                         tasks={card.tasks} />);
+                         taskCallbacks={this.props.taskCallbacks}
+                          {...card} />);
 
         });
 
@@ -23,5 +21,6 @@ export default class List extends React.Component {
 
 List.propTypes = {
     cards: PropTypes.arrayOf(PropTypes.object),
-    title: PropTypes.string.isRequired
+    title: PropTypes.string.isRequired,
+    taskCallbacks: PropTypes.object
 };
